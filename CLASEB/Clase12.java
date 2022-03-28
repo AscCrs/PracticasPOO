@@ -25,7 +25,4 @@ public class Clase12 {
     }
 }
 
-/**
- * Tarea: 
- * Modelar e implementar la suma de dos fracciones basados en objetos
- */
+

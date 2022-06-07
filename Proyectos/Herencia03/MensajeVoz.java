@@ -115,7 +115,7 @@ public class MensajeVoz extends Mensaje {
             this.numeroTelefono, 
             this.nombreAudio, 
             this.duracionAudio);
-        String destino = "C:/Users/crist/OneDrive/Documentos/Programacion/Java/POO/Proyectos/WhatsappMessages/herencia03/src/main/java/com/herencia03/Web/Web/Audios/";
+        String destino = "RUTA DEL AUDIO";
         String archivo = destino + "infoAudio.json";
 
         Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.TRANSIENT, Modifier.STATIC).setPrettyPrinting().create();
@@ -132,16 +132,11 @@ public class MensajeVoz extends Mensaje {
 
     public void moverArchivo() {
         try {
-            String ruta = "C:/Users/crist/OneDrive/Documentos/Programacion/Java/POO/Proyectos/WhatsappMessages/herencia03/" + this.nombreAudio + ".mp3";
+            String ruta = "RUTA DEL AUDIO" + this.nombreAudio + ".mp3";
             File file = new File(ruta);
-            String targetDirectory = "C:/Users/crist/OneDrive/Documentos/Programacion/Java/POO/Proyectos/WhatsappMessages/herencia03/src/main/java/com/herencia03/Web/Web/Audios/";
+            String targetDirectory = "Ubicacion a donde se movera el audio";
 
             file.renameTo(new File(targetDirectory + file.getName()));
-
-            // ** Buscar como inicializar firebase abriendo el cmder
-            // String [] cmd = {"cd"};
-            // Runtime.getRuntime().exec("cd src/main/java/com/herencia03/Web/");
-            // Runtime.getRuntime().exec("firebase deploy");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -149,7 +144,7 @@ public class MensajeVoz extends Mensaje {
 
     public void ejecutarFirebase() {
         try {
-            File ruta = new File("C:/Users/crist/OneDrive/Documentos/Programacion/Java/POO/Proyectos/WhatsappMessages/herencia03/src/main/java/com/herencia03/Web/Web/Audios/");
+            File ruta = new File("Ruta donde se ejecutara el comando");
             // String []values = {"firebase", "deploy"};
             Process p = Runtime.getRuntime().exec("cmd /c firebase deploy", null, ruta);
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -157,13 +152,6 @@ public class MensajeVoz extends Mensaje {
             while ((resultsOfExec = br.readLine()) != null) {
                 System.out.println(resultsOfExec);
             }
-            // Process p2 = Runtime.getRuntime().exec("cmd /c firebase deploy");
-            // BufferedReader br2 = new BufferedReader(new InputStreamReader(p2.getInputStream()));
-            // String resultsOfExec2 = null;
-            // while ((resultsOfExec2 = br2.readLine()) != null) {
-            //     System.out.println(resultsOfExec);
-            // }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

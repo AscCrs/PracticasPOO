@@ -8,14 +8,17 @@ public class PuntoCartesiano {
 
     public Float getY() { return y; }
 
+    public void setX(Float x) {
+        this.x = x;
+    }
+
     PuntoCartesiano(Float x, Float y) {
         this.x = x;
         this.y = y;
     }
 
-    public Float calcularDistancia(PuntoCartesiano b) {
-
-        // agregar código
-        return null;
+    public Float calcularDistancia(PuntoCartesiano a) {
+        return (float)(Math.sqrt((Math.pow((a.x - x), 2)) + (Math.pow((a.y - y), 2))));
     }
+
 }
